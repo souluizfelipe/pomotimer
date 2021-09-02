@@ -20,8 +20,6 @@ function count() {
     let counterMinutes = Number(minutes.textContent)
     let counterSeconds = Number(seconds.textContent)
 
-    
-    
     if(counterSeconds == '00') {
       counterMinutes -= 1
 
@@ -31,8 +29,6 @@ function count() {
     counterSeconds --
     seconds.textContent = String(counterSeconds)
     
-
-
   } , 1000)
 
 
