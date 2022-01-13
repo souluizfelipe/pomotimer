@@ -7,7 +7,7 @@ const stopBtn = document.querySelector('.stop-btn')
 
 
 const MINUTES_INITIAL_VALUE = '25'
-const SECONDS_INITIAL_VALUE = '04'
+const SECONDS_INITIAL_VALUE = '11'
 
 minutes.textContent = MINUTES_INITIAL_VALUE
 seconds.textContent = SECONDS_INITIAL_VALUE
@@ -23,10 +23,17 @@ function count() {
     if(counterSeconds == '00') {
       counterMinutes -= 1
 
-      return( seconds.textContent = "03", minutes.textContent = counterMinutes)
+      return(seconds.textContent = "59", minutes.textContent = counterMinutes)
     }
     
+    if(counterSeconds <= 10) {
+      counterSeconds -= 1
+
+      return (seconds.textContent = "0" + counterSeconds, minutes.textContent = counterMinutes)
+    }
+
     counterSeconds --
+
     seconds.textContent = String(counterSeconds)
     
   } , 1000)
